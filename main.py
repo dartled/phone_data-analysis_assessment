@@ -5,18 +5,18 @@ import statistics
 
 quit = False
 
-old_data_df = pd.read_csv('data/phone_brand&price.csv')
+phone_data_df = pd.read_csv('data/phone_brand&price.csv')
 
-phone_df = pd.read_csv('data/phone_brand&price.csv',
-                            header=None,
-                            names=['brand', 'price'])
+#phone_df = pd.read_csv('data/phone_brand&price.csv',
+                            #header=None,
+                            #names=['brand', 'price'])
                             #names=['brand', 'price(USD)'])
                             #names=['phone_name', 'brand', 'os', 'inches', 'resolution', 'battery', 'battery_type', 'ram(GB)', 'announcement_date', 'weight(g)', 'storage(GB)', 'video_720p', 'video_1080p', 'video_4K', 'video_8K', 'video_30fps', 'video_60fps', 'video_120fps', 'video_240fps', 'video_480fps', 'video_960fps', 'price(USD)'])
 
 def getOriginalData():
-    print(old_data_df)
+    print(phone_data_df)
 
-def getUpdatedData():
+#def getUpdatedData():
     print(phone_df)
 
 def getCharts():
@@ -25,7 +25,7 @@ def getCharts():
     try:
         
         print('before plot')
-        phone_df.plot(      
+        phone_data_df.plot(      
                         kind='bar',
                         x='brand', 
                         y='price(USD)', 
@@ -59,18 +59,15 @@ def getStatistical_Data(analysis_type, statistical_data):
     #print(statistical_data)
 
     if statistical_data == 'mean':
-        #print(statistics.mean([analysis_type]))
-        print(phone_df.mean(0,True,True))
+        print(phone_data_df.mean(0,True,True))
     elif statistical_data == 'median':
-        #print(statistics.median([analysis_type]))
-        print(phone_df.median(0,True,True))
+        print(phone_data_df.median(0,True,True))
     elif statistical_data == 'mode':
-        #print(statistics.mode([analysis_type]))
-        print(phone_df.mode(0,True))
+        print(phone_data_df.mode(0,True))
     elif statistical_data == 'max':
-        print(phone_df.max(0,True, True))
+        print(phone_data_df.max(0,True, True))
     elif statistical_data == 'min':
-        print(phone_df.min(0, True, True))
+        print(phone_data_df.min(0, True, True))
     else:
         print('Please enter valid option')
 
@@ -81,7 +78,7 @@ def userOptions():
           
     Please select an option:
     1 - Show the original dataset
-    2 - Show the updated Data Frame
+    2 - 
     3 - Analyse the Mean, Median, or Mode of given data
     4 - Visualise phone prices by brand
     5 - Quit Program
@@ -92,8 +89,8 @@ def userOptions():
 
         if choice == 1:
             getOriginalData()
-        elif choice == 2:
-            getUpdatedData()
+        #elif choice == 2:
+            #data-adding-function-here
         elif choice == 3: 
             getAnalysis()
         elif choice == 4:
