@@ -5,9 +5,9 @@ import statistics
 
 quit = False
 
-old_data_df = pd.read_csv('/Data/Darrell/Computing Tech/phone_data-analysis_assessment/data/phone_brand&price.csv')
+old_data_df = pd.read_csv('data/phone_brand&price.csv')
 
-phone_df = pd.read_csv('/Data/Darrell/Computing Tech/phone_data-analysis_assessment/data/phone_brand&price.csv',
+phone_df = pd.read_csv('data/phone_brand&price.csv',
                             header=None,
                             names=['brand', 'price'])
                             #names=['brand', 'price(USD)'])
