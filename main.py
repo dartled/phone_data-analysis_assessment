@@ -28,7 +28,7 @@ def getCharts():
         phone_data_df.plot(      
                         kind='bar',
                         x='brand', 
-                        y='price(USD)', 
+                        y='price', 
                         color='blue',
                         alpha=0.3,
                         title='Phone Prices by Brand')
